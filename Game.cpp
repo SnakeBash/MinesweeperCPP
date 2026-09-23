@@ -29,7 +29,7 @@ void Board::DrawBoard()
         for (int i = 0; i < BOARD_SIZE; i++)
         {
             std::cout << "| ";
-            std::cout << '?' << std::setw(2);
+            std::cout << DEFAULT_CELL_VALUE << std::setw(2);
         }
 
         std::cout << std::setfill(' ') << std::setw(1) << "|" << std::endl;
@@ -45,11 +45,17 @@ void Board::DrawBoard()
         }
 }
 
+Cell::Cell(int x, int y)
+{
+    this->x = x;
+    this->y = y;
+}
+
 int main()
 {
-    Board layout{};
+    Board board{};
 
-    layout.DrawBoard();
+    board.DrawBoard();
 
     return 0;
 }
